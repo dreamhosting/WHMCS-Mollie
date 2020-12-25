@@ -2,21 +2,21 @@
 
 require_once __DIR__ . '/mollie/mollie.php';
 
-function molliebitcoin_devapp_config()
+function mollieapplepay_devapp_config()
 {
     $config = mollie_config();
 
     $config = array_merge($config, array(
         'FriendlyName' => array(
             'Type' => 'System',
-            'Value' => 'Mollie Bitcoin'
+            'Value' => 'Mollie Apple Pay'
         )
     ));
 
     return $config;
 }
 
-function molliebitcoin_devapp_link($params)
+function mollieapplepay_devapp_link($params)
 {
-    return mollie_link($params, \Mollie\Api\Types\PaymentMethod::BITCOIN);
+    return mollie_link($params, \Mollie\Api\Types\PaymentMethod::APPLEPAY);
 }
